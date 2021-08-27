@@ -1,0 +1,9 @@
+<%= @category.id %></h1>
+
+ 
+<%= form_for @category  do |f| %>
+  <%= f.label :Edit %>
+  <%= f.text_field :name, placeholder: "Edit your Category" %>
+  <%= f.submit "Update" %>
+  <%= link_to 'submit', "/category/:id" %>
+<% end %>

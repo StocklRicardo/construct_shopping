@@ -1,0 +1,5 @@
+<%= form_for @category, :url => {:action => "new"} do |f| %>
+  <%= f.label :category %>
+  <%= f.text_field :name, placeholder: "Create your Category" %>
+  <%= f.submit "Create" %>
+<% end %>

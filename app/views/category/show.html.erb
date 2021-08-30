@@ -1,0 +1,49 @@
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">
+        <%= @category.name %><br>
+      </th>
+      <th scope="col"></th>
+      <th scope="col">
+        <%= @category.user.email %><br>
+      </th>
+      <th scope="col">
+        <%= link_to 'Logout' , destroy_user_session_path, method: :delete %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @category.ads.present? %>
+      <% @category.ads.each do |ad|%>
+        <tr>
+          <th scope="row">
+            <%= ad.title%>
+          </th>
+          <td>
+            <%= link_to 'Edit AD' , edit_ad_path(ad.id) %>
+          </td>
+          <td>
+            <%= link_to 'Delete AD' , ad_path(ad), method: :delete %>
+          </td>
+          <td>
+            <%= link_to 'Show AD' , ad_path(ad.id) %>
+          </td>
+        </tr>
+        <% end %>
+          <% end %>
+  </tbody>
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col">
+          <%= link_to 'Edit Category' , edit_category_path(@category.id) %>
+        </th>
+        <th scope="col">
+          <%= link_to 'New AD' , new_ad_path(category_id: @category.id) %><br>
+        </th>
+      </tr>
+    </thead>
+  </table>

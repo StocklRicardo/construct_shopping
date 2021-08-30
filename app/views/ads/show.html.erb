@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">
+            <%= current_user.email %>
+          </th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <%= @ad.user.email %>
+          </th>
+          <td>
+            <%= @ad.title %>
+          </td>
+          <td>
+            <%= @ad.price %><br>
+          </td>
+          <td>
+            <%= @ad.description %><br>
+          </td>
+          <td>
+            <%= @ad.category.name %>
+          </td>
+
+        </tr>
+
+        <th scope="row">
+          <%= link_to 'Edit' , edit_ad_path(@ad.id) %>
+        </th>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to 'Home' , category_index_path %>
+  </div>
+</div>

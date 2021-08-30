@@ -1,5 +1,32 @@
-<%= form_for @category, :url => {:action => "new"} do |f| %>
-  <%= f.label :category %>
-  <%= f.text_field :name, placeholder: "Create your Category" %>
-  <%= f.submit "Create" %>
-<% end %>
+<div class="container">
+  <div class="row">
+
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">
+            <%= link_to 'Home' , category_index_path %>
+          </th>
+          <th scope="col"></th>
+          <th scope="col">
+            <%= link_to 'Logout' , destroy_user_session_path, method: :delete %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <%= form_for @category, :url=> {:action => "create"} do |f| %>
+              <%= f.label :category %>
+                <%= f.text_field :name, placeholder: "Create your Category" %>
+                  <%= f.submit "Create" %>
+                    <% end %>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <%= form_for @ad, :url=> {:action => "update"} do |f| %>
+      <div class="form-group boots">
+        <%= f.label :title %><br>
+          <%= f.text_field :title, placeholder: "Edit your Ad" , class: "form-control" , id: "exampleFormControlInput1"
+            %>
+            <br>
+            <div class="form-group boots">
+        <%= f.label :price %>
+          <%=f.text_field :price, class: "form-control" , id:"exampleFormControlInput1" %>
+      </div>
+      </div>
+      <div class="form-group boots">
+        <%= f.label :description %><br>
+          <%= f.text_area :description, placeholder: "Updating your Ads" ,class:"form-control",
+            id:"exampleFormControlSelect1" %><br>
+      </div>
+      <%= f.submit "Edit" %>
+        <% end %>
+          <%= link_to 'Back' , ad_path(@ad.id) %>
+  </div>
+</div>

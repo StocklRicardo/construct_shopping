@@ -1,9 +1,25 @@
-<%= @category.id %></h1>
+<div class="container">
+   
+      <%= form_for @category do |f| %>
+        <div class="form-group">
 
- 
-<%= form_for @category  do |f| %>
-  <%= f.label :Edit %>
-  <%= f.text_field :name, placeholder: "Edit your Category" %>
-  <%= f.submit "Update" %>
-  <%= link_to 'submit', "/category/:id" %>
-<% end %>
+        </div>
+        <div class="form-group boots">
+          <%= f.label :Edit %>
+            </label>
+
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">
+            <%= f.text_field :name, placeholder: "Edit your Category" %>
+          </label>
+        </div>
+
+        <%= f.submit%>
+          <% end %>
+    
+    <%= link_to 'Home' , category_index_path %>
+      <%= link_to 'Logout' , destroy_user_session_path, method: :delete %>
+
+  </div>
+</div>
